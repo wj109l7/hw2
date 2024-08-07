@@ -34,3 +34,5 @@ steps:
       - '--service-account' 
       - '771835205748-compute@developer.gserviceaccount.com'
       - '--clear-env-vars'
+options:
+  logging: CLOUD_LOGGING_ONLY
