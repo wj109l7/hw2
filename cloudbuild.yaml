@@ -1,0 +1,23 @@
+steps:
+  - name: 'gcr.io/cloudbuild/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'us-docker.pkg.dev/cloudrun/container/hw2'
+      - '.'
+  - name: 'gcr.io/cloudbuild/docker'
+    args:
+      - 'push'
+      - 'us-docker.pkg.dev/cloudrun/container/hw2'
+  - name: 'gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'hw2'
+      - '--image'
+      - 'us-docker.pkg.dev/cloudrun/container/hw2'
+      - '--platform'
+      - 'managed'
+      - '--region'
+      - 'us-central1'
+      - '--allow-unauthenticated'
