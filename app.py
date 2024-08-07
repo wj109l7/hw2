@@ -14,7 +14,7 @@ translate_client = translate.Client()
 @app.route('/')
 def hello():
     """Return a friendly HTTP greeting."""
-    message = "It's running!"
+    message = "It's finally running!"
 
     """Get Cloud Run environment variables."""
     service = os.environ.get('K_SERVICE', 'Unknown service')
